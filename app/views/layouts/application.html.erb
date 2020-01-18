@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BookApp1</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="alert alert-warning">
+        <%= link_to image_tag('/rogo1.png'),index_read_books_path %>
+      </header>
+    <%= yield %>
+    <footer class="alert alert-warning">
+      <%= link_to "読ぽん",index_read_books_path %>
+    </footer>
+  </div>
+  </body>
+</html>

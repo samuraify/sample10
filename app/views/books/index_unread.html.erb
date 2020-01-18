@@ -1,0 +1,14 @@
+<h1>未読の本</h1>
+  <%= render 'index', book: book %>
+  <%= render 'index', book: @book %>
+  <% @books.each do |book| %>
+  <% end %>
+<hr>
+<% if signed_in? %>
+<%= link_to "既読の本", index_read_books_path %>
+<%= link_to "未読の本",index_unread_books_path %>
+<%= link_to "マイページ",users_show_path(current_user.id) %>
+<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+<% end %>
+<hr>
+<!--p>Find me in app/views/books/index_unread.html.erb</p -->

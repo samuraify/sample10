@@ -1,0 +1,22 @@
+<h1>既読の本一覧</h1>
+<hr>
+<%= render 'index', book: @book %>
+<hr>
+<ul class = "nav nav-pills">
+<% if !signed_in? %>
+<li class = "nav-item"><%= link_to "自分も作ってみる", new_user_registration_path %></li>
+<li class = "nav-item"><%= link_to "ログイン",user_session_path %></li>
+<% else %>
+<li class = "nav-item"><%= link_to "マイページ",users_show_path(current_user.id) %></li>
+<li class = "nav-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+<% end %>
+</ul>
+
+<!-- ツイッターに宣伝 -->
+<%= link_to @tweet_url,:onclick=>"window.open(this.href,'hoge', 'height=400, width=600');return false;" do %>
+  <div style="background-color:#1da1f2;color:#ffffff;line-height:38px;text-align:center;padding: 0 16px;margin: 15px 10px;border-radius:10px;">
+    <i class="fa fa-twitter"></i>
+    みんなに宣伝
+  </div>
+<% end %>
+<!--Find me in app/views/books/index_read.html.erb-->
